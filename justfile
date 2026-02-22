@@ -5,8 +5,8 @@ set unstable := true
 default: install
 
 release:
-    just -n release-info
-    just -n release-build
+    just  release-info
+    just  release-build
 
 release-info:
     just dist::info

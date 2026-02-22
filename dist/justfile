@@ -7,7 +7,7 @@ version := `cargo pkgid | sed 's/.*#//'`
 tag := "v" + version
 
 tag:
-    git tag -a {{ tag }} -m "Release {{ version }}"
+    git tag -a {{ version }} -m "Release {{ version }}"
 
 build name=name target=target:
     cargo build --bin {{ name }} --release {{ if target != "" { "--target " + target } else { "" } }}
