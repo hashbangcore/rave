@@ -10,6 +10,26 @@ The more skilled you are with shells, the more you will get out of this tool.
 
 ---
 
+## Installation
+
+Netero can be installed in several ways depending on your preference:
+
+### Using Cargo
+
+```bash
+cargo install netero
+```
+
+### Using Nix Flakes
+
+If you use Nix, you can install it with:
+
+```bash
+nix profile add github:hashbangcore/netero
+```
+
+---
+
 ## Environment Variables
 
 It is configured via environment variables.
