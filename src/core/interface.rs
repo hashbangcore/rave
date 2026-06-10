@@ -22,6 +22,18 @@ pub struct Cli {
     /// Start a trace server to print raw LLM traffic
     #[arg(short = 't', long)]
     pub trace: bool,
+
+    /// Force output format for prompt (plain | markdown)
+    #[arg(short = 'o', long, global = true)]
+    pub output: Option<OutputFormat>,
+}
+
+#[derive(clap::ValueEnum, Clone, Debug)]
+pub enum OutputFormat {
+    /// Render markdown to plain text (no ANSI codes)
+    Plain,
+    /// Keep raw markdown
+    Markdown,
 }
 
 #[derive(Subcommand, Debug)]

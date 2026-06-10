@@ -39,7 +39,10 @@ pub async fn generate_message(
         println!("\x1b[1m{}:\x1b[0m\n\n{}\n", user.to_uppercase(), prompt);
         println!("\x1b[1mLLM:\x1b[0m\n\n{}", response.trim());
     } else {
-        println!("{}", render::render_markdown(&response));
+        println!(
+            "{}",
+            render::render_markdown_with(&response, args.output.as_ref())
+        );
     }
 
     Ok(())
