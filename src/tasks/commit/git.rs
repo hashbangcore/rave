@@ -3,7 +3,6 @@ use std::process::Command;
 /// Collects git status and staged diff to give context to the model.
 pub fn staged_changes() -> String {
     run_commands(&[
-        "git status -sb",
         "git diff --cached --quiet && echo 'No staged changes' || (git diff --staged --stat --no-color && git diff --staged --no-color)",
     ])
 }
